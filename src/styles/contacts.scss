@@ -1,150 +1,148 @@
-@use 'variables' as var;
+@use "variables" as var;
 
 .contacts {
   display: flex;
   flex-direction: column;
-  margin-top: 60px;
+  align-items: center;
+  gap: 48px;
   width: 100%;
 
+  margin: 80px 0 120px;
+
   @media (min-width: 576px) {
-    margin-top: 120px;
+    margin: 120px 52px 100px;
   }
 
   @media (min-width: 1260px) {
-    margin-top: 180px;
-  }
-
-  &__container {
-    @media (min-width: 576px) {
-      display: flex;
-      margin-bottom: 102px;
-      gap: 24px;
-      flex-direction: row;
-      margin-left: 54px;
-    }
-
-    @media (min-width: 1260px) {
-      margin-bottom: 164px;
-      gap: 215px;
-      margin-left: 215px;
-    }
+    margin: 180px 52px 164px;
   }
 
   &__title {
-    font-size: var.$textSizeBig;
-    font-weight: var.$textWeightMedium;
-    line-height: var.$textLineHeight;
-    letter-spacing: var.$textLetterSpacing;
-    text-align: center;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 500;
+    letter-spacing: -1.5%;
 
     @media (min-width: 576px) {
-      font-size: var.$textSizeVeryBig;
+      font-size: 48px;
     }
   }
 
-  &__form {
+  &__info-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+    gap: 48px;
+    width: 100%;
 
-    &-box {
-      min-width: 288px;
-
-      @media (min-width: 576px) {
-        max-width: 288px;
-      }
-
-      @media (min-width: 1260px) {
-        min-width: 411px;
-      }
+    @media (min-width: 576px) {
+      flex-direction: row;
+      gap: 24px;
+      justify-content: center;
+      margin-right: 64px;
     }
 
-    &-field {
-      font-family: inherit;
-      box-sizing: border-box;
-      font-weight: var.$textWeightThin;
-      color: var.$secondaryTextColor;
-      font-size: 14px;
-      line-height: 48px;
-      margin-top: 16px;
-      padding-left: 16px;
-      border-radius: 40px;
-      outline: 0;
-      border: 0;
-      width: 100%;
-      height: 48px;
-      background-color: var.$formColor;
+    @media (min-width: 1260px) {
+      gap: 198px;
+      margin-right: 252px;
+    }
 
-      @media (min-width: 576px) {
-        margin-top: 24px;
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      &__input {
+        padding: 0 16px;
+
+        font: inherit;
+        height: 48px;
+        border-radius: 40px;
+        border: none;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+
+        @media (min-width: 576px) {
+          width: 288px;
+        }
+
+        @media (min-width: 1260px) {
+          width: 364px;
+        }
       }
 
-      &--textarea {
-        height: 148px;
+      &__textarea {
+        font: inherit;
+        box-sizing: border-box;
+
+        padding: 14px 16px;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
         border-radius: 16px;
+
+        height: 120px;
+
         resize: none;
       }
-    }
 
-    &-button {
-      margin-top: 20px;
-      min-height: 48px;
-      width: 100%;
-      text-decoration: none;
-      color: var.$secondaryTextColor;
-      background-color: var.$mainTextColor;
-      border-radius: 40px;
-      line-height: 48px;
-      text-align: center;
-      font-size: var.$textSizeSmall;
-      font-weight: var.$textWeightBold;
-      border: none;
-      transition: var.$transitionDuration;
-      cursor: pointer;
+      &__button {
+        font: inherit;
+        height: 56px;
 
-      @media (min-width: 576px) {
-        max-width: 100%;
-      }
+        border: none;
+        border-radius: 40px;
 
-      &:hover {
-        box-shadow: 1px 4px 16px #e8e8f066;
-      }
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 27px;
 
-      &:active {
-        box-shadow: 1px 4px 16px #e8e8f0a3;
+        margin-top: 16px;
+
+        cursor: pointer;
+        transition: var.$transitionDuration;
+
+        &:hover {
+          box-shadow: 1px 4px 16px #e8e8f066;
+        }
       }
     }
-  }
 
-  &__box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 48px;
-    margin-bottom: 120px;
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
 
-    @media (min-width: 576px) {
-      margin-top: 0;
-    }
+      &__text-box {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
 
-    &-title {
-      font-size: var.$textSizeSmall - 2px;
-      font-weight: var.$textWeightThin;
-      line-height: var.$textLineHeight + 40%;
-      margin-bottom: 0;
-    }
+        &__title {
+          margin: 0;
 
-    &-text {
-      text-decoration: none;
-      color: var.$mainTextColor;
-      font-size: var.$textSizeSmall;
-      font-weight: var.$textWeightMedium;
-      line-height: var.$textLineHeight + 40%;
-    }
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 140%;
+        }
 
-    &-text:hover {
-      color: var.$formTextColor;
+        &__text {
+          margin: 0;
+          color: inherit;
+          text-decoration: none;
+
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 140%;
+          transition: var.$transitionDuration;
+
+          &:hover {
+            color: var.$formTextColor;
+          }
+        }
+      }
     }
   }
 }
